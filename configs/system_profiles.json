@@ -1,0 +1,13 @@
+{
+  "schema": "execution-finality-system-profiles/v1",
+  "profiles": [
+    {"name":"embedded-control","sink":"actuator","latency_target_us":100,"state":"protected-memory","enforcement":"MCU/secure-element","note":"native/hardware target; Python is not the performance implementation"},
+    {"name":"accelerator-hot-path","sink":"dma-memory-release","latency_target_us":500,"state":"device-memory","enforcement":"GPU/DPU/SmartNIC"},
+    {"name":"upf-egress","sink":"network-egress","latency_target_us":1000,"state":"local-durable","enforcement":"UPF/N6 or SmartNIC"},
+    {"name":"api-gateway","sink":"network-egress","latency_target_us":2000,"state":"durable","enforcement":"reverse proxy / service mesh gateway"},
+    {"name":"storage-writer","sink":"storage-write","latency_target_us":5000,"state":"database","enforcement":"transactional write boundary"},
+    {"name":"payment-finality","sink":"payment-ledger","latency_target_us":10000,"state":"durable-ledger","enforcement":"payment terminal / ledger bridge"},
+    {"name":"cross-region-governance","sink":"network-egress","latency_target_us":20000,"state":"replicated-durable","enforcement":"regional egress gateway"},
+    {"name":"audit-heavy","sink":"model-output","latency_target_us":50000,"state":"append-only","enforcement":"model-output emitter"}
+  ]
+}

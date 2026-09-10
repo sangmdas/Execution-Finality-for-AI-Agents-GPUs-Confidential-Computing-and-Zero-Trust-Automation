@@ -1,0 +1,71 @@
+{
+  "schema": "finality-canonicalization-conformance-v1",
+  "positive": [
+    {
+      "id": "decomposed-string",
+      "value": {
+        "v": "café"
+      },
+      "canonical_utf8": "{\"v\":\"café\"}"
+    },
+    {
+      "id": "decomposed-key",
+      "value": {
+        "é": "value"
+      },
+      "canonical_utf8": "{\"é\":\"value\"}"
+    },
+    {
+      "id": "supplementary-key-order",
+      "value": {
+        "😀": 1,
+        "": 2,
+        "A": 3
+      },
+      "canonical_utf8": "{\"A\":3,\"\":2,\"😀\":1}"
+    },
+    {
+      "id": "json-string-escaping",
+      "value": {
+        "v": "<>&  \b\u000b\\\""
+      },
+      "canonical_utf8": "{\"v\":\"<>&  \\b\\u000b\\\\\\\"\"}"
+    },
+    {
+      "id": "canonical-equivalence",
+      "value": {
+        "angstrom": "Å",
+        "ring": "Å",
+        "pre": "Å"
+      },
+      "canonical_utf8": "{\"angstrom\":\"Å\",\"pre\":\"Å\",\"ring\":\"Å\"}"
+    }
+  ],
+  "negative": [
+    {
+      "id": "nfc-key-collision",
+      "value": {
+        "é": 1,
+        "é": 2
+      }
+    },
+    {
+      "id": "floating-point",
+      "value": {
+        "n": 1.5
+      }
+    },
+    {
+      "id": "unsafe-positive-integer",
+      "value": {
+        "n": 9007199254740992
+      }
+    },
+    {
+      "id": "unsafe-negative-integer",
+      "value": {
+        "n": -9007199254740992
+      }
+    }
+  ]
+}

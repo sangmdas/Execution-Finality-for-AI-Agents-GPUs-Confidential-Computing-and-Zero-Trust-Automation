@@ -1,0 +1,46 @@
+{
+  "schema": "execution-finality-reference-environment-v2",
+  "captured_at_utc": "2026-09-10T00:49:40.465295+00:00",
+  "python": "3.13.5",
+  "python_implementation": "CPython",
+  "python_unicode_data": "15.1.0",
+  "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+  "kernel_release": "6.18.35",
+  "machine": "x86_64",
+  "cpu_model_from_proc": "AMD EPYC 9V74 80-Core Processor",
+  "cpu_vendor_from_proc": "AuthenticAMD",
+  "logical_cpu_count_visible": 5,
+  "process_cpu_affinity": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "memory_total_bytes_visible": 6236925952,
+  "libc": {
+    "name": "glibc",
+    "version": "2.41"
+  },
+  "sqlite": "3.46.1",
+  "openssl": "OpenSSL 3.5.5 27 Jan 2026",
+  "node": "v22.16.0",
+  "node_unicode_data": "16.0",
+  "node_icu": "77.1",
+  "go": "go version go1.23.2 linux/amd64",
+  "go_unicode_data_recorded": "15.0.0 (Go 1.23.2 unicode.Version)",
+  "go_vendored_x_text": "v0.16.0",
+  "packages": {
+    "setuptools": "82.0.1",
+    "pytest": "9.0.2",
+    "pytest-cov": "7.0.0",
+    "coverage": "7.13.3",
+    "cryptography": "46.0.4"
+  },
+  "notes": [
+    "The values describe the execution container visible to the test process.",
+    "The CPU model may identify an underlying or virtualized host CPU; no bare-metal assumption is made.",
+    "No claim is made about CPU frequency, cache topology, NUMA placement, governor, core isolation, or dedicated accelerators.",
+    "Unicode data versions differ across the three runtimes; cross-language claims are tied to the included conformance vectors/tested repertoire."
+  ]
+}

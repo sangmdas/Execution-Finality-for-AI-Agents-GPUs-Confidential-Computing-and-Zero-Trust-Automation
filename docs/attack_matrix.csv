@@ -1,0 +1,37 @@
+attack_id,name,layer,reference_mitigation,status,residual_risk
+A01,Direct raw socket bypass,wide-channel,Privileged sink plus deny alternate egress,DEPLOYMENT_REQUIRED,Hidden/raw egress defeats userspace-only design
+A02,Direct database writer bypass,wide-channel,Exclusive DB credentials/proxy sink,DEPLOYMENT_REQUIRED,Alternate credentials
+A03,Renderer/debug leak,wide-channel,Model renderer/logging as effect channels,DEPLOYMENT_REQUIRED,Undeclared telemetry
+A04,DMA peer-to-peer bypass,device,IOMMU/driver/DPU/device sink,DEPLOYMENT_REQUIRED,Compromised firmware/IOMMU
+A05,Candidate payload mutation,protocol,Candidate+payload digest and sink recompute,TESTED,None under hash/signature assumptions
+A06,Destination substitution,protocol,HCAD + whole candidate binding,TESTED,None under hash/signature assumptions
+A07,Purpose substitution,protocol,HCAD + candidate binding,TESTED,None under hash/signature assumptions
+A08,Jurisdiction substitution,protocol,HCAD + candidate binding,TESTED,None under hash/signature assumptions
+A09,Scope expansion,protocol,Exact scope + local supported scope,TESTED,None under verifier assumptions
+A10,Sink substitution,finality-sink,Local sink identity + cap binding,TESTED,Compromised local sink
+A11,Boundary substitution,finality-sink,Local boundary identity + cap binding,TESTED,Compromised local boundary
+A12,Policy epoch downgrade,finality-sink,Local expected epoch + evidence/cap epoch,TESTED,Distributed epoch coordination DoS
+A13,Stale capability,finality-sink,Expiry/freshness checks,TESTED,Clock trust
+A14,Future-dated capability,finality-sink,Clock skew bound,TESTED,Clock compromise
+A15,Replay sequential,state,Atomic capability claim,TESTED,Consumption-store rollback
+A16,Replay concurrent,state,Lock/SQLite unique claim,TESTED,External DB correctness
+A17,Cross-sink laundering,finality-sink,Sink+boundary binding,TESTED,Compromised sinks colluding with keys
+A18,Missing evidence,evidence,Required signed evidence lookup,TESTED,Evidence availability DoS
+A19,Evidence mutation,evidence,Signature + semantic field checks,TESTED,Authority key compromise
+A20,State transition substitution,state,Transition ID + candidate verification,TESTED,State-store compromise/rollback
+A21,Capability theft,capability,Strict PoP presentation mode,TESTED,Presenter key compromise/race after key theft
+A22,Capability field tamper,capability,Signature + independent structural checks,TESTED,Authority key compromise
+A23,Confused deputy presenter,capability,Presenter key ID bound in Candidate Act + fresh proof,TESTED,Improper key provisioning
+A24,Crash after effect before consume,state,Consume before effect,MITIGATED,Avoids duplicate but changes failure mode
+A25,Crash after consume before effect,state,At-most-once + outbox/idempotency guidance,RESIDUAL,Potential lost effect
+A26,Canonicalization mismatch,encoding,Narrow canonical profile + interop vectors,TESTED,Apps using unspec'd encodings
+A27,Unicode normalization collision,encoding,NFC + duplicate-key rejection,TESTED,External system normalization differences
+A28,Floating-point ambiguity,encoding,Reject floats in bound material,TESTED,Application conversion mistakes
+A29,Sink host compromise,platform,Minimal privileged TCB + attestation guidance,RESIDUAL,Full sink compromise can bypass
+A30,Authority key compromise,keys,HSM/TEE/asymmetric keys + separation,RESIDUAL,Compromised authority can mint authorization
+A31,Sink receipt key compromise,keys,Separate receipt key from authority key,MITIGATED,Forged receipts possible but not authority caps
+A32,Side/covert channel,platform,Explicitly out of finality scope,OUT_OF_SCOPE,Timing/cache/RF/power leakage
+A33,DoS against sink,availability,Fail closed + capacity planning,RESIDUAL,Availability loss
+A34,Queue duplicate delivery,external-effect,Capability ID as idempotency key,DEPLOYMENT_REQUIRED,Broker semantics
+A35,Payment duplicate settlement,external-effect,Ledger transaction/idempotency coupling,DEPLOYMENT_REQUIRED,Payment-system semantics
+A36,Hidden new consequence channel,wide-channel,Deployment manifest + security review,RESIDUAL,Static manifest cannot discover unknown paths

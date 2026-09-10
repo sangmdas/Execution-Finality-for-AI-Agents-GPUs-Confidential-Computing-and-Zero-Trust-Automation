@@ -1,0 +1,108 @@
+{
+  "schema": "portable-execution-finality-case/v1",
+  "authority_key_hex": "706f727461626c652d66696e616c6974792d617574686f726974792d6b6579",
+  "sink_context": {
+    "sink_id": "sink-portable",
+    "boundary_id": "boundary-portable",
+    "policy_epoch": 7,
+    "supported_scopes": [
+      "SETTLE"
+    ],
+    "effect_class": "payment-ledger"
+  },
+  "candidate": {
+    "act_id": "portable-act-unicode-1",
+    "act_class": "payment",
+    "effect_class": "payment-ledger",
+    "source": "agent-portable",
+    "destination": "ledger://demo/beneficiary-José",
+    "purpose": "settlement-café",
+    "jurisdiction": "EU",
+    "policy_epoch": 7,
+    "nonce": "portable-nonce-unicode-1",
+    "issued_at_ns": 1700000000000000,
+    "freshness_ns": 5000000000,
+    "sink_id": "sink-portable",
+    "boundary_id": "boundary-portable",
+    "scope": [
+      "SETTLE"
+    ],
+    "payload": {
+      "amount_minor": 54321,
+      "currency": "EUR",
+      "beneficiary": "José",
+      "memo": "résumé"
+    },
+    "runtime_evidence_digest": "runtime-portable",
+    "authority_context": {
+      "runtime": "portable-demo",
+      "label": "café"
+    },
+    "status": "NON_EFFECTIVE"
+  },
+  "hcad": {
+    "schema": "finality-hcad/v1",
+    "act_id": "portable-act-unicode-1",
+    "act_class": "payment",
+    "effect_class": "payment-ledger",
+    "source": "agent-portable",
+    "destination": "ledger://demo/beneficiary-José",
+    "purpose": "settlement-café",
+    "jurisdiction": "EU",
+    "policy_epoch": 7,
+    "nonce": "portable-nonce-unicode-1",
+    "issued_at_ns": 1700000000000000,
+    "freshness_ns": 5000000000,
+    "sink_id": "sink-portable",
+    "boundary_id": "boundary-portable",
+    "scope": [
+      "SETTLE"
+    ],
+    "payload_digest": "669bf8317502cc192775701cea14ea6f9d96e33c31cb13e6af1ec0252e6a913d",
+    "runtime_evidence_digest": "runtime-portable"
+  },
+  "state_transition": {
+    "transition_id": "6594f5301cd3dd1fd8a90a1c1d2c6adff40f916b37037b9b71a57622c963fddc",
+    "nonce": "portable-nonce-unicode-1",
+    "source": "agent-portable",
+    "before_version": 0,
+    "after_version": 1,
+    "quota_before": 10,
+    "quota_after": 9,
+    "budget_before": 100,
+    "budget_after": 99,
+    "policy_epoch": 7
+  },
+  "validation_evidence": {
+    "evidence_id": "5a5bc05f1919fffe44eff8c05f83332a1cf6a85c90fae3af784e444c6871dadf",
+    "authority_id": "portable-authority",
+    "descriptor_digest": "33e0ebc351ef91ec538e459ec1c11a51100c6fda59c037411e1f76d9ff5466e4",
+    "candidate_digest": "b44ab37b2f2adbe78171c44675a18e72647076c718726695afbd491d91803be6",
+    "transition_id": "6594f5301cd3dd1fd8a90a1c1d2c6adff40f916b37037b9b71a57622c963fddc",
+    "policy_epoch": 7,
+    "decision": "ALLOW",
+    "reasons": [],
+    "committed_at_ns": 1700000000000000,
+    "signature": "532009a7a8791fb074afee4c4d2a1283d19390aab16740fa83c9dbb668f30004",
+    "key_id": "portable-authority-v1"
+  },
+  "capability": {
+    "capability_id": "6f2c3bf8241095580ff7dcdeb3ffdfb0c3005d33bbfb90b45476f3d935437236",
+    "authority_id": "portable-authority",
+    "candidate_digest": "b44ab37b2f2adbe78171c44675a18e72647076c718726695afbd491d91803be6",
+    "descriptor_digest": "33e0ebc351ef91ec538e459ec1c11a51100c6fda59c037411e1f76d9ff5466e4",
+    "sink_id": "sink-portable",
+    "boundary_id": "boundary-portable",
+    "nonce": "portable-nonce-unicode-1",
+    "scope": [
+      "SETTLE"
+    ],
+    "policy_epoch": 7,
+    "evidence_id": "5a5bc05f1919fffe44eff8c05f83332a1cf6a85c90fae3af784e444c6871dadf",
+    "transition_id": "6594f5301cd3dd1fd8a90a1c1d2c6adff40f916b37037b9b71a57622c963fddc",
+    "issued_at_ns": 1700000000000000,
+    "expires_at_ns": 1700002000000000,
+    "key_id": "portable-authority-v1",
+    "signature": "862b0bcae34802484a9152aa720fc65f3e19ecbf1fb2a016362476de10583904"
+  }
+}
